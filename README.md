@@ -139,6 +139,23 @@ privately per [SECURITY.md](SECURITY.md).
 [docs/INETRACK_API.md](docs/INETRACK_API.md) documents how the IneTrack API behaves and the
 known issues the integration works around.
 
+## Support
+
+This is a free, unofficial project maintained in my spare time. If it saved you some
+and you'd like to say thanks, you can send a tip via Revolut — entirely optional, and
+never required to use the integration.
+
+<a href="https://revolut.me/princzkel">
+  <img src="docs/images/revolut-qr.png" alt="Revolut payment QR code for @princzkel" width="180" align="left" hspace="16" vspace="4">
+</a>
+
+**[revolut.me/princzkel](https://revolut.me/princzkel)**
+
+Scan the QR code, or follow the link, to send a tip on Revolut — you can pay even if you
+are not on Revolut yourself. Thank you! 🙏
+
+<br clear="left">
+
 ## License
 
 MIT
