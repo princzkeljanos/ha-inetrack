@@ -161,6 +161,9 @@ async def test_reauth(
     assert result["type"] is FlowResultType.ABORT
     assert result["reason"] == "reauth_successful"
     assert config_entry.data[CONF_API_KEY] == "new-key"
+    # The successful reauth reloads the entry in the background. Let it finish, or the
+    # teardown can cancel it mid-setup and leave the device tracker's timer behind.
+    await hass.async_block_till_done()
 
 
 async def test_options_flow(
