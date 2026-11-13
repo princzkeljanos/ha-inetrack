@@ -1,6 +1,7 @@
 {
   "domain": "inetrack",
   "name": "IneTrack",
+  "categories": ["vehicles_transport.cars_evs", "presence_location.trackers"],
   "codeowners": ["@princzkeljanos"],
   "config_flow": true,
   "documentation": "https://github.com/princzkeljanos/ha-inetrack",
