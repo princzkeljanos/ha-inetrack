@@ -1,0 +1,131 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connect IneTrack",
+        "description": "1. Log in at {url}, open **Settings > Security** and click **Generate new API key**.\n2. Open each car in IneTrack and copy the browser address (it contains `trackerId=...`), or just the number after `trackerId=`.",
+        "data": {
+          "api_key": "API key",
+          "trackers": "Trackers"
+        },
+        "data_description": {
+          "api_key": "The developer API key of your IneTrack account.",
+          "trackers": "One tracker ID or IneTrack link per line."
+        }
+      },
+      "names": {
+        "title": "Name your trackers",
+        "description": "These become the device names in Home Assistant, for example the name used in IneTrack."
+      },
+      "reauth_confirm": {
+        "title": "IneTrack API key rejected",
+        "description": "The API key no longer works (it may have been regenerated or disabled). Create a new one at {url} under **Settings > Security** and paste it here.",
+        "data": {
+          "api_key": "API key"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "IneTrack refused the request. Check that the API key is copied completely and is active, and that the tracker IDs belong to this account.",
+      "unknown_trackers": "These tracker IDs are not visible with this API key: {trackers}",
+      "trackers_required": "Enter at least one tracker ID or IneTrack link.",
+      "cannot_connect": "Could not reach the IneTrack API. Try again later.",
+      "api_error": "The IneTrack API returned an error. Try again later.",
+      "unknown": "Unexpected error, see the Home Assistant log."
+    },
+    "abort": {
+      "already_configured": "These trackers are already set up.",
+      "reauth_successful": "The API key was updated."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "IneTrack options",
+        "data": {
+          "trackers": "Trackers",
+          "scan_interval": "Update interval",
+          "address_lookup": "Look up the address of the position",
+          "extended_data": "Read tracker data (voltage, odometer, ...)"
+        },
+        "data_description": {
+          "trackers": "One tracker ID or IneTrack link per line. Removing a tracker removes its device.",
+          "scan_interval": "How often to ask IneTrack for new data. Trackers usually report every 30-120 seconds while driving.",
+          "address_lookup": "Adds the street address IneTrack resolves for the last position.",
+          "extended_data": "Creates sensors for the values the trackers send besides the position. Turn off if you only need the position."
+        }
+      },
+      "names": {
+        "title": "Name your trackers",
+        "description": "These become the device names in Home Assistant."
+      }
+    },
+    "error": {
+      "invalid_auth": "IneTrack refused the request. Check that the tracker IDs belong to this account.",
+      "unknown_trackers": "These tracker IDs are not visible with this API key: {trackers}",
+      "trackers_required": "Enter at least one tracker ID or IneTrack link.",
+      "cannot_connect": "Could not reach the IneTrack API. Try again later.",
+      "api_error": "The IneTrack API returned an error. Try again later.",
+      "unknown": "Unexpected error, see the Home Assistant log."
+    }
+  },
+  "entity": {
+    "device_tracker": {
+      "location": {
+        "name": "Location"
+      }
+    },
+    "sensor": {
+      "speed": {
+        "name": "Speed"
+      },
+      "heading": {
+        "name": "Heading"
+      },
+      "altitude": {
+        "name": "Altitude"
+      },
+      "gps_accuracy": {
+        "name": "GPS accuracy"
+      },
+      "place": {
+        "name": "Place"
+      },
+      "address": {
+        "name": "Address"
+      },
+      "last_report": {
+        "name": "Last report"
+      },
+      "external_voltage": {
+        "name": "Car battery voltage"
+      },
+      "tracker_battery_voltage": {
+        "name": "Tracker battery voltage"
+      },
+      "odometer": {
+        "name": "Odometer"
+      },
+      "trip_distance": {
+        "name": "Trip distance"
+      },
+      "satellites": {
+        "name": "Satellites"
+      },
+      "gsm_signal": {
+        "name": "GSM signal"
+      }
+    },
+    "binary_sensor": {
+      "moving": {
+        "name": "Moving"
+      },
+      "ignition": {
+        "name": "Ignition"
+      },
+      "connected": {
+        "name": "Connected"
+      }
+    }
+  }
+}

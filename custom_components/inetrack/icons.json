@@ -1,0 +1,61 @@
+{
+  "entity": {
+    "device_tracker": {
+      "location": {
+        "default": "mdi:car"
+      }
+    },
+    "sensor": {
+      "heading": {
+        "default": "mdi:compass-outline"
+      },
+      "altitude": {
+        "default": "mdi:altimeter"
+      },
+      "gps_accuracy": {
+        "default": "mdi:crosshairs-gps"
+      },
+      "place": {
+        "default": "mdi:map-marker"
+      },
+      "address": {
+        "default": "mdi:map-marker-outline"
+      },
+      "last_report": {
+        "default": "mdi:map-clock"
+      },
+      "external_voltage": {
+        "default": "mdi:car-battery"
+      },
+      "tracker_battery_voltage": {
+        "default": "mdi:battery"
+      },
+      "odometer": {
+        "default": "mdi:counter"
+      },
+      "trip_distance": {
+        "default": "mdi:map-marker-distance"
+      },
+      "satellites": {
+        "default": "mdi:satellite-variant"
+      },
+      "gsm_signal": {
+        "default": "mdi:signal"
+      }
+    },
+    "binary_sensor": {
+      "moving": {
+        "default": "mdi:car",
+        "state": {
+          "on": "mdi:car-arrow-right"
+        }
+      },
+      "ignition": {
+        "default": "mdi:engine-off",
+        "state": {
+          "on": "mdi:engine"
+        }
+      }
+    }
+  }
+}

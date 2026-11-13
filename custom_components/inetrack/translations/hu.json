@@ -1,0 +1,131 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "IneTrack csatlakoztatása",
+        "description": "1. Lépj be a {url} oldalon, nyisd meg a **Beállítások > Biztonság** fület, és kattints az **Új API kulcs generálása** gombra.\n2. Nyisd meg az autókat az IneTrack-ben, és másold ki a böngésző címsorát (benne van a `trackerId=...`), vagy csak a `trackerId=` utáni számot.",
+        "data": {
+          "api_key": "API kulcs",
+          "trackers": "Trackerek"
+        },
+        "data_description": {
+          "api_key": "Az IneTrack fiókod fejlesztői API kulcsa.",
+          "trackers": "Soronként egy tracker azonosító vagy IneTrack link."
+        }
+      },
+      "names": {
+        "title": "Trackerek elnevezése",
+        "description": "Ezek lesznek az eszközök nevei a Home Assistantban, például az IneTrack-ben használt név."
+      },
+      "reauth_confirm": {
+        "title": "Az IneTrack API kulcs érvénytelen",
+        "description": "Az API kulcs már nem működik (lehet, hogy újragenerálták vagy letiltották). Készíts újat a {url} oldalon a **Beállítások > Biztonság** alatt, és másold ide.",
+        "data": {
+          "api_key": "API kulcs"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Az IneTrack elutasította a kérést. Ellenőrizd, hogy az API kulcs teljes és aktív, és hogy a tracker azonosítók ehhez a fiókhoz tartoznak.",
+      "unknown_trackers": "Ezek a tracker azonosítók nem láthatók ezzel az API kulccsal: {trackers}",
+      "trackers_required": "Adj meg legalább egy tracker azonosítót vagy IneTrack linket.",
+      "cannot_connect": "Nem érhető el az IneTrack API. Próbáld újra később.",
+      "api_error": "Az IneTrack API hibát adott vissza. Próbáld újra később.",
+      "unknown": "Váratlan hiba, lásd a Home Assistant naplót."
+    },
+    "abort": {
+      "already_configured": "Ezek a trackerek már be vannak állítva.",
+      "reauth_successful": "Az API kulcs frissítve."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "IneTrack beállítások",
+        "data": {
+          "trackers": "Trackerek",
+          "scan_interval": "Frissítési időköz",
+          "address_lookup": "Cím lekérdezése a pozícióhoz",
+          "extended_data": "Tracker adatok olvasása (feszültség, kilométeróra, ...)"
+        },
+        "data_description": {
+          "trackers": "Soronként egy tracker azonosító vagy IneTrack link. Egy tracker törlése az eszközét is törli.",
+          "scan_interval": "Milyen gyakran kérjen új adatot az IneTrack-től. Vezetés közben a trackerek általában 30-120 másodpercenként jelentenek.",
+          "address_lookup": "Hozzáadja az utcacímet, amit az IneTrack az utolsó pozícióhoz rendel.",
+          "extended_data": "Szenzorokat hoz létre a trackerek által a pozíción kívül küldött értékekhez. Kapcsold ki, ha csak a pozíció kell."
+        }
+      },
+      "names": {
+        "title": "Trackerek elnevezése",
+        "description": "Ezek lesznek az eszközök nevei a Home Assistantban."
+      }
+    },
+    "error": {
+      "invalid_auth": "Az IneTrack elutasította a kérést. Ellenőrizd, hogy a tracker azonosítók ehhez a fiókhoz tartoznak.",
+      "unknown_trackers": "Ezek a tracker azonosítók nem láthatók ezzel az API kulccsal: {trackers}",
+      "trackers_required": "Adj meg legalább egy tracker azonosítót vagy IneTrack linket.",
+      "cannot_connect": "Nem érhető el az IneTrack API. Próbáld újra később.",
+      "api_error": "Az IneTrack API hibát adott vissza. Próbáld újra később.",
+      "unknown": "Váratlan hiba, lásd a Home Assistant naplót."
+    }
+  },
+  "entity": {
+    "device_tracker": {
+      "location": {
+        "name": "Helyzet"
+      }
+    },
+    "sensor": {
+      "speed": {
+        "name": "Sebesség"
+      },
+      "heading": {
+        "name": "Irány"
+      },
+      "altitude": {
+        "name": "Magasság"
+      },
+      "gps_accuracy": {
+        "name": "GPS pontosság"
+      },
+      "place": {
+        "name": "Hely"
+      },
+      "address": {
+        "name": "Cím"
+      },
+      "last_report": {
+        "name": "Utolsó jelentés"
+      },
+      "external_voltage": {
+        "name": "Akkumulátor feszültség"
+      },
+      "tracker_battery_voltage": {
+        "name": "Tracker akku feszültség"
+      },
+      "odometer": {
+        "name": "Kilométeróra"
+      },
+      "trip_distance": {
+        "name": "Út távolság"
+      },
+      "satellites": {
+        "name": "Műholdak"
+      },
+      "gsm_signal": {
+        "name": "GSM jelerősség"
+      }
+    },
+    "binary_sensor": {
+      "moving": {
+        "name": "Mozgásban"
+      },
+      "ignition": {
+        "name": "Gyújtás"
+      },
+      "connected": {
+        "name": "Csatlakozva"
+      }
+    }
+  }
+}

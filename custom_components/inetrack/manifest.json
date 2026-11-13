@@ -1,0 +1,13 @@
+{
+  "domain": "inetrack",
+  "name": "IneTrack",
+  "codeowners": ["@princzkeljanos"],
+  "config_flow": true,
+  "documentation": "https://github.com/princzkeljanos/ha-inetrack",
+  "integration_type": "hub",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/princzkeljanos/ha-inetrack/issues",
+  "loggers": ["custom_components.inetrack"],
+  "requirements": [],
+  "version": "0.1.0"
+}
