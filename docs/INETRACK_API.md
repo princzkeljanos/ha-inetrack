@@ -126,6 +126,7 @@ server-side.
 the other data commands (and confirm the caller owns the requested `deviceId`).
 
 ### F2 — No way to list an account's own trackers  ·  **High**
+Tracked in [#1](https://github.com/princzkeljanos/ha-inetrack/issues/1).
 
 **Observed:** `ListUserDevices` (and `ListUserDevicesInGroups`, `GetTrackersByIds`) return
 `HTTP 500 {"success":false,"message":"Internal server error"}` for every parameter
@@ -144,6 +145,7 @@ expiry — all available in `deviceDescriptor` — are therefore unavailable to 
 and show proper names and metadata.
 
 ### F3 — `GetConnectionStates` returns HTTP 500  ·  **Medium**
+Tracked in [#2](https://github.com/princzkeljanos/ha-inetrack/issues/2).
 
 **Observed:** `GetConnectionStates` returns `HTTP 500`, `errorId: 15`, for valid-looking
 input.
@@ -157,6 +159,7 @@ integration derives connectivity indirectly from `connected` / `disconnected` /
 `trackerKicked` events instead, which is approximate.
 
 ### F4 — `GetStatusDataList` / `ListStatusDataRules` fail with a valid key  ·  **Medium**
+Tracked in [#3](https://github.com/princzkeljanos/ha-inetrack/issues/3).
 
 **Observed:** with a **valid** key, `GetStatusDataList` and `ListStatusDataRules` return
 `HTTP 500`. (`GetStatusDataList` without a key returns 200 — see F1.)
@@ -167,6 +170,7 @@ guess units (e.g. that `externalVoltage` is millivolts). The integration hard-co
 common Teltonika value names and units as a workaround.
 
 ### F5 — One unknown ID fails a whole batch  ·  **Medium**
+Tracked in [#4](https://github.com/princzkeljanos/ha-inetrack/issues/4).
 
 **Observed:** `GetLastReports` with several `deviceIds`, where one ID is not visible to the
 key, returns `HTTP 403 Forbidden` for the **entire** request rather than returning the
@@ -178,6 +182,7 @@ works around this by retrying one ID at a time to find the offending one.
 **Suggested fix:** return per-tracker results, marking only the unauthorised IDs.
 
 ### F6 — Client errors are reported as HTTP 500  ·  **Medium**
+Tracked in [#5](https://github.com/princzkeljanos/ha-inetrack/issues/5).
 
 **Observed:** malformed requests, unknown commands and (for some commands) auth problems
 come back as `HTTP 500 {"message":"Internal server error"}` rather than a `4xx`.
@@ -194,6 +199,7 @@ to treat `403` as auth and everything else as retryable, which is coarse.
 genuine server faults.
 
 ### F7 — Mixed timestamp units in one object  ·  **Low**
+Tracked in [#6](https://github.com/princzkeljanos/ha-inetrack/issues/6).
 
 **Observed:** within a single report, `creationTimestamp` is epoch **milliseconds** while
 `storageTimestamp` is epoch **nanoseconds** (≈ `1.79e18`).
@@ -203,11 +209,13 @@ genuine server faults.
 **Suggested fix:** use the same unit (ms) for all timestamps, documented.
 
 ### F8 — `positionType` accepts enum and integer, undocumented  ·  **Low**
+Tracked in [#7](https://github.com/princzkeljanos/ha-inetrack/issues/7).
 
 Both `positionType=REVERSE_GEOCODE` and `positionType=1` are accepted. The mapping is not
 documented; the enum names should be the documented form.
 
 ### F9 — Duplicated / inconsistent response fields  ·  **Low**
+Tracked in [#8](https://github.com/princzkeljanos/ha-inetrack/issues/8).
 
 **Observed:** `ReportWrapper` contains both `reportOrNull` and `report` with identical
 content, and both `poiOrAddress` and `addressOrNull`. POI names appear under
@@ -218,6 +226,7 @@ event payloads repeat fields at both the wrapper and inner-object level (`value`
 **Why it matters:** more to parse and more ways to get it subtly wrong; larger payloads.
 
 ### F10 — Public documentation is outdated  ·  **Low**
+Tracked in [#9](https://github.com/princzkeljanos/ha-inetrack/issues/9).
 
 The prose docs (2013 blog post, `support.inetrack.hu/IneTrackAPI` wiki) predate the current
 command set. The `apischema` endpoint is current and excellent but is not linked from
