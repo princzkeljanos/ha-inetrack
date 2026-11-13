@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security vulnerability
+    url: https://github.com/princzkeljanos/ha-inetrack/security/advisories/new
+    about: Report a security problem privately, not as a public issue (see SECURITY.md).
+  - name: Home Assistant community
+    url: https://community.home-assistant.io/
+    about: General Home Assistant questions that are not specific to this integration.

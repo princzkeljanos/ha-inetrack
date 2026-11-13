@@ -1,0 +1,26 @@
+# gitleaks configuration for ha-inetrack
+# Runs in CI (.github/workflows/secret-scan.yml) over the whole git history.
+[extend]
+useDefault = true
+
+[[rules]]
+id = "inetrack-api-key"
+description = "IneTrack API key (apikey query parameter)"
+# The IneTrack developer API key is a 32-character token passed as ?apikey=...
+regex = '''(?i)apikey["'=:\s]{1,3}([A-Za-z0-9]{24,64})'''
+secretGroup = 1
+keywords = ["apikey"]
+
+[allowlist]
+description = "Placeholders, fake keys and example URLs used in docs and tests"
+regexTarget = "match"
+regexes = [
+  '''apikey=(invalid|invalid-test-key|<[^>]+>|\.\.\.|YOUR_API_KEY|API.?kulcs)''',
+  '''test-api-key[A-Za-z0-9-]*''',          # tests/conftest.py fixture
+  '''[Aa]ut[óo]szerel''',                    # example POI name in tests
+]
+paths = [
+  '''tests/.*''',
+  '''docs/.*''',
+  '''README\.md''',
+]

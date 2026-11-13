@@ -121,15 +121,23 @@ automation:
       custom_components.inetrack: debug
   ```
 
-## Development
+## Contributing
 
-See [docs/GETTING_STARTED.md](docs/GETTING_STARTED.md).
+Pull requests are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) for the dev setup,
+[docs/GETTING_STARTED.md](docs/GETTING_STARTED.md) for the publishing workflow, and
+[docs/BRANCHING.md](docs/BRANCHING.md) for the branch policy. Report security problems
+privately per [SECURITY.md](SECURITY.md).
 
 - `custom_components/inetrack/api.py` is a standalone async client for the IneTrack API
   (no Home Assistant imports). API schema: <https://api.inetrack.com/apischema>.
 - `python scripts/probe_api.py <tracker IDs>` shows what the API returns for your account
   (redacted, written to the git-ignored `probe-output.json`).
-- Tests: `pip install -r requirements_test.txt`, then `pytest`.
+- Tests: `pip install -r requirements_test.txt`, then `pytest` (Python 3.14).
+
+### IneTrack API notes
+
+[docs/INETRACK_API.md](docs/INETRACK_API.md) documents how the IneTrack API behaves and the
+known issues the integration works around.
 
 ## License
 

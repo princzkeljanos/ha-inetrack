@@ -1,0 +1,28 @@
+name: IneTrack API issue
+description: A problem or question about the IneTrack developer API itself
+labels: ["api"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        For problems in the **IneTrack API / service** (not this integration's code).
+        See [docs/INETRACK_API.md](../blob/main/docs/INETRACK_API.md) for already-known
+        issues. Please do not paste your API key.
+  - type: input
+    id: command
+    attributes:
+      label: API command
+      placeholder: "GetLastReports, ListUserDevices, ..."
+  - type: textarea
+    id: request
+    attributes:
+      label: Request (key redacted)
+      render: text
+      placeholder: "https://api.inetrack.com/api?command=...&apikey=REDACTED"
+  - type: textarea
+    id: response
+    attributes:
+      label: Response and expected behaviour
+      render: text
+    validations:
+      required: true

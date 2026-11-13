@@ -1,0 +1,57 @@
+name: Bug report
+description: Something in the integration does not work as expected
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting! Please do **not** paste your API key, exact coordinates or
+        full addresses. Use **Download diagnostics** (device page → ⋮) — it is redacted.
+  - type: input
+    id: ha_version
+    attributes:
+      label: Home Assistant version
+      placeholder: "2026.11.1"
+    validations:
+      required: true
+  - type: input
+    id: integration_version
+    attributes:
+      label: Integration version
+      placeholder: "0.1.0"
+    validations:
+      required: true
+  - type: input
+    id: tracker_model
+    attributes:
+      label: Tracker model (if known)
+      placeholder: "Teltonika FMT100"
+  - type: textarea
+    id: what_happened
+    attributes:
+      label: What happened?
+      description: What did you expect, and what happened instead?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. ...
+        2. ...
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs / diagnostics
+      description: |
+        Relevant lines from the Home Assistant log (enable debug logging for
+        `custom_components.inetrack`) and/or the redacted diagnostics download.
+      render: text
+  - type: checkboxes
+    id: no_secrets
+    attributes:
+      label: Confirmation
+      options:
+        - label: I have removed my API key, exact coordinates and full address from this report.
+          required: true

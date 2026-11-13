@@ -1,0 +1,21 @@
+name: Feature request
+description: Suggest a new sensor, option or capability
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What would you like to be able to do?
+    validations:
+      required: true
+  - type: textarea
+    id: data
+    attributes:
+      label: Which IneTrack data does it need?
+      description: |
+        If you know the API command or the value name (e.g. a status-data / extended-data
+        name shown in IneTrack's "Location based data"), mention it here.
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything else?

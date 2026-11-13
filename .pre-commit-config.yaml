@@ -1,0 +1,15 @@
+# Optional but recommended: catches lint issues and secrets before they are committed.
+#   pip install pre-commit && pre-commit install
+# Run once over everything:  pre-commit run --all-files
+repos:
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.17.5
+    hooks:
+      - id: ruff
+        args: [--fix]
+      - id: ruff-format
+
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.30.1
+    hooks:
+      - id: gitleaks

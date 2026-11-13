@@ -1,11 +1,44 @@
+# === Secrets: never commit these ===================================
+# The integration itself needs NO secret files. These are only ever
+# produced locally by scripts/probe_api.py or by your editor.
+.inetrack_key
+*.key
+*.pem
+*.p12
+*.pfx
+secrets.*
+.env
+.env.*
+credentials*.json
+# scripts/probe_api.py output: contains live account data (positions, IDs)
+probe-output.json
+probe-output*.json
+
+# === Python ========================================================
 __pycache__/
 *.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
 .venv/
+venv/
+env/
+.Python
+
+# === Tooling caches ================================================
 .ruff_cache/
 .pytest_cache/
+.mypy_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# === Editors / OS ==================================================
 .vscode/
 .idea/
-
-# scripts/probe_api.py: output (account data) and the optional saved API key
-probe-output.json
-.inetrack_key
+*.code-workspace
+*.swp
+.DS_Store
+Thumbs.db
+desktop.ini
