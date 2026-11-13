@@ -95,9 +95,9 @@ The Marketplace shows releases as versions (without releases it installs the lat
 ## 7. Optional: get listed in the Marketplace catalog
 
 Custom repositories work for anyone who has the link. To appear in the Marketplace search
-for everyone, the repository must pass the HACS action with nothing ignored (remove the
-`ignore:` line in `.github/workflows/validate.yml`), have a description, topics, at least
-one release and the brand icon; then open a pull request to
+for everyone, the repository must pass the HACS check in `.github/workflows/validate.yml`
+(it runs every check: description, topics, brand icon, ...) and have at least one release;
+then open a pull request to
 [hacs/default](https://github.com/hacs/default) adding `princzkeljanos/ha-inetrack` to
 the `integration` list.
 
