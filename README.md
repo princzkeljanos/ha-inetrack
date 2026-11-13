@@ -12,7 +12,11 @@ voltage, odometer, ignition and more.
 
 ## What you get
 
-One device per tracker, with:
+One device per tracker. This is a car's device page (the street address is hidden):
+
+![Device page of a car in Home Assistant: car battery voltage, heading, ignition, last report, moving, odometer, place and speed under Sensors; tracker state, connection, GSM signal, satellites and tracker battery voltage under Diagnostic; position reports under Activity](docs/images/device-page.png)
+
+The entities:
 
 | Entity | Description |
 | --- | --- |
@@ -29,6 +33,15 @@ One device per tracker, with:
 
 Which sensors appear depends on what your tracker model sends; they are created when a
 value is first seen. Values that identify the SIM card are never read into Home Assistant.
+
+Each car also appears on the Home Assistant map (the map is blurred in this screenshot):
+
+![A car on the Home Assistant map, with its card showing that it is away and when it last changed](docs/images/map.png)
+
+On a dashboard, standard tile cards are enough to show where each car is, its ignition and its
+battery voltage (the addresses are hidden in this screenshot):
+
+![Dashboard tile cards for two cars: one away and one at home, each with ignition off and its battery voltage](docs/images/dashboard-cards.png)
 
 ## Installation
 
@@ -58,6 +71,10 @@ trackers, so you enter them once):
    Paste the API key and the links (or just the IDs), one per line.
 4. Give each tracker a name. This becomes the device name, e.g. `Mazda6` →
    `device_tracker.mazda6`.
+
+Each tracker becomes a device under the IneTrack hub:
+
+![The IneTrack integration page in Home Assistant: one hub with two cars, Mazda3 and Mazda6, as devices](docs/images/integration-page.png)
 
 ### Options
 

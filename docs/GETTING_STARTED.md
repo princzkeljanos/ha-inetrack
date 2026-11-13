@@ -85,6 +85,11 @@ The Marketplace shows releases as versions (without releases it installs the lat
 3. **Settings > Devices & services > Add integration > IneTrack**: paste the API key and
    your tracker links, then name the trackers.
 
+IneTrack then shows under **Settings > Devices & services**, marked as a custom integration
+(the box icon) that needs the internet (the globe):
+
+![IneTrack in the Home Assistant integration list, with 2 devices and the custom integration and internet badges](images/integration-list.png)
+
 ## 6. Ship an update
 
 1. Change the code, bump `"version"` in `manifest.json` (e.g. `0.1.1`).
