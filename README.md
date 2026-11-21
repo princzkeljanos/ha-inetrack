@@ -5,7 +5,7 @@
 
 Unofficial Home Assistant integration for [IneTrack](https://inetrack.hu/) GPS trackers.
 It puts your vehicles on the Home Assistant map and shows their speed, car battery
-voltage, odometer, ignition and more.
+voltage, ignition, the distance the tracker has counted and more.
 
 > Not affiliated with Inepex Zrt. / IneTrack. It uses the public
 > [IneTrack developer API](https://api.inetrack.com).
@@ -25,7 +25,7 @@ The entities:
 | `sensor.<car>_speed`, `sensor.<car>_heading` | From the last position report |
 | `sensor.<car>_last_report` | When the tracker last reported a position |
 | `sensor.<car>_car_battery_voltage` | Vehicle battery / supply voltage (V) |
-| `sensor.<car>_odometer`, `sensor.<car>_trip_distance` | Tracker odometer and trip distance (km) |
+| `sensor.<car>_odometer`, `sensor.<car>_trip_distance` | Distance counted by the tracker, in total and per trip (km). The tracker does not read the car's own odometer, so the total can differ from the car's |
 | `binary_sensor.<car>_ignition` | Ignition on/off (from the tracker's ACC events) |
 | `binary_sensor.<car>_moving` | On while a recent report shows more than 3 km/h |
 | Diagnostic | Tracker battery voltage, satellites, GSM signal, server connection |
